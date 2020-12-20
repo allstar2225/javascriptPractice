@@ -1,0 +1,151 @@
+<!-- HTML 5 선언 -->
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <!-- 
+        meta 설명
+        문자셋 
+        검색 엔진용 참조
+        설명
+        저작권자
+        모바일 용 화면비율
+    -->
+    <meta charset="UTF-8">
+    <meta name="keyword" content="javascript">
+    <meta name="description" content="첫 시작">
+    <meta name="author" content="chohyunsu">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 외부 스타일 시트 연결 -->
+    <link rel="stylesheet" href="../css/indexStyle.css">
+    <!-- 내부 스타일 시트 설정 -->
+    <style>
+        #id {}
+
+        .class {}
+    </style>
+
+    <!-- js 내부연결 -->
+    <script>
+
+    </script>
+    <!-- JS 외부파일 연결 -->
+    <script src="위치"></script>
+
+    <title> javascript 모음</title>
+
+</head>
+
+<body>
+
+    <h1>- 산술연산자 -</h1>
+    <p> &plus; 사칙연산을 다루는 기본연산자</p>
+    <script>
+        var x = 4, y = 10;
+
+        document.write(x + y + "<br>");
+
+        document.write(x - y + "<br>");
+
+        document.write(x * y + "<br>");
+
+        document.write(x / y + "<br>");
+
+        document.write(x % y);
+
+    </script>
+
+    <hr>
+    <h1>- 대입연산자 -</h1>
+    <p> &plus; 이항 연산자.</p>
+    <script>
+        var x = 4, y = 10, z = 6;
+
+        document.write("var x = 4, y = 10, z = 6 <br><br>");
+        x = x - 5;
+        document.write("x = x - 5 <br><br>");
+        document.write(x + "<br>"); // 4에서 5를 뺀다
+        y -= 5;
+        document.write("y -= 5 <br><br>");
+        document.write(y + "<br>") // 10에서 5를 뺀다
+        z = - 5; // -5와 같음
+        document.write("z = - 5 <br><br>");
+        document.write(z); // 초기화? 된다
+    </script>
+
+    <hr>
+    <h1>- 증감연산자 -</h1>
+    <p> &plus; 피연산자를 1씩 증가 혹은 감소시킴</p>
+    <script>
+        var x = 5, y = 6;
+
+        document.write("var x = 5, y = 6 <br><br>");
+        document.write(++x - 3 + (" : x에 1을 더한 후 -3 한다 <br><br> "));
+        document.write(x + " : 위에서 1이 더해진 x값만 출력된다 <br><br>");
+        document.write(x++ - 3 + (" : 1을 더하기전 -3 한다 <br><br> "));
+        document.write(x + " : 위에 1이 더해진 값에 추가로 1을 더해서 7이 나온다 <br><br>");
+        document.write("<br>")
+        document.write(++y - 3 + (" : y에 1을 더한 후 -3 한다 <br><br> "));
+        document.write(y + " : 위에서 1이 더해진 y값만 출력된다 <br><br>");
+        document.write(y++ - 3 + (" : 1을 더하기전 -3 한다 <br><br> "));
+        document.write(y + " : 위에 1이 더해진 값에 추가로 1을 더해서 7이 나온다 <br><br>");
+        document.write("<br>")
+        var y = x-- + 5 + --x;
+        document.write(y);
+
+    </script>
+
+    <hr>
+    <h1>- 비교연산자 -</h1>
+    <p> &plus; 피연산자 사이의 크기를 판단, 참과 거짓을 반환</p>
+    <script>
+        var x = 10, y = 20;
+        var a = "abc", b = "bca";
+
+        document.write("var x = 10, y = 20 <br><br>");
+        document.write("var a = 'abc', b = 'bca' <br><br>");
+        document.write((x > y) + "<br>"); // x가 y보다 작으므로 false
+        document.write((a <= b) + "<br>"); // a에 a가 시작되고 b가 b가 시작되므로 true
+        document.write((x < a) + "<br>"); // x는 숫자 , a는 문자열이므로 false
+        document.write("<br>")
+        x = 3, y = '3', z = 3;
+        document.write("x == y : " + (x == y) + " // x 와 y 타입이 다르므로 서로 같게 하고 비교후 true<br>");
+        document.write("x === y : " + (x === y) + " // x 와 y이 다르므로 false<br>");
+        document.write("x === z : " + (x === z) + " // x 와 z는 같은 타입으로 ture<br>");
+
+    </script>
+
+    <hr>
+    <h1>- 논리연산자 -</h1>
+    <p> &plus; 논리식으로 판단하여 참과 거짓을 구분</p>
+    <script>
+        var x = true, y = false;
+        document.write("var x = true, y = false; <br><br>");
+        document.write("x && y : " + (x && y) + " // (논리 and 연산)<br>");
+        document.write("x || y : " + (x || y) + " // (논리 or 연산)<br>");
+        document.write("!x : " + (!x) + " // (논리 NOT 연산)<br>");
+
+    </script>
+
+    <hr>
+    <h1>- 비트연산자 -</h1>
+    <p> &plus; 비트 단위의 논리 연산을 수행</p>
+    <script>
+        var x = 15, y = -8, z = 15;
+
+        document.write("var x = 15, y = -8, z = 15 <br><br>");
+        document.write("x & y : " + (x & y) + " // 비트 and 연산 <br>");
+        document.write("x | y : " + (x | y) + " // 비트 or 연산 <br>");
+        document.write("x ^ y : " + (x ^ y) + " // 비트 xor 연산 <br>");
+
+    </script>
+
+
+
+    <hr style="clear: both;">
+    <p style="clear: both;"><a href="../index.html"> 첫페이지로</a></p>
+</body>
+
+</html>

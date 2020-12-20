@@ -1,0 +1,57 @@
+<!-- HTML 5 선언 -->
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <!-- 
+        meta 설명
+        문자셋 
+        검색 엔진용 참조
+        설명
+        저작권자
+        모바일 용 화면비율
+    -->
+    <meta charset="UTF-8">
+    <meta name="keyword" content="javascript">
+    <meta name="description" content="첫 시작">
+    <meta name="author" content="chohyunsu">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 외부 스타일 시트 연결 -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- 내부 스타일 시트 설정 -->
+    <style>
+        #id {}
+
+        .class {}
+
+    </style>
+
+    <!-- js 내부연결 -->
+    <script>
+        function printDate() {
+            document.getElementById("date").innerHTML=Date();
+        }
+    </script>
+    <!-- JS 외부파일 연결 -->
+    <script src="위치"></script>
+
+    <title> javascript 모음</title>
+
+</head>
+
+<body>
+
+    <h1>- script 불러오기 -</h1>
+    <p> &plus; head 요소에 명시된 함수를 호출한다</p>
+    <button onclick="printDate()">클릭하시오</button>
+    <p id="date"></p>
+
+
+    
+    <hr style="clear: both;">
+    <p style="clear: both;"><a href="../index.html"> 첫페이지로</a></p>
+</body>
+
+</html>

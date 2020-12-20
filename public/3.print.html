@@ -1,0 +1,75 @@
+<!-- HTML 5 선언 -->
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <!-- 
+        meta 설명
+        문자셋 
+        검색 엔진용 참조
+        설명
+        저작권자
+        모바일 용 화면비율
+    -->
+    <meta charset="UTF-8">
+    <meta name="keyword" content="javascript">
+    <meta name="description" content="첫 시작">
+    <meta name="author" content="chohyunsu">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 외부 스타일 시트 연결 -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- 내부 스타일 시트 설정 -->
+    <style>
+        #id {}
+
+        .class {}
+    </style>
+
+    <title> javascript 모음</title>
+
+</head>
+
+<body>
+
+    <h1>- window.alert() -</h1>
+    <p> &plus; 새창을 띄워 사용자에게 데이터 전달</p>
+    <button onclick="alertDial()">눌러보세요</button>
+    <script>
+        function alertDial() {
+            alert("이 창이 뜰겁니다.")
+        }
+    </script>
+
+    <hr>
+    <h1>- innerHTML 프로퍼티 -</h1>
+    <p> &plus; document의 getElementByID() 나 getElementsByTagName()로 HTML요소 선택. innerHTML을 사용하면, html 요소의 내용(content)나
+        속성(attribute)값을 손쉽게 바꿀수 있다.</p>
+    <p id="text">이 문장이 바뀔것이다.</p>
+    <script>
+        var change = document.getElementById("text");
+        change.innerHTML = "innerHTML로 p태그의 요소를 바꾼다.";
+    </script>
+
+    <hr>
+    <h1>- document.write() -</h1>
+    <p> &plus; 웹페이지가 로딩될때 실행되며, 가장먼저 데이터를 출력. 보통 테스트나 디버깅을 위해 쓴다.</p>
+    <script>
+        document.write("document.write로 출력한 문장")
+    </script>
+
+    <hr>
+    <h1>- console.log() -</h1>
+    <p> &plus; 웹 브라우저의 콘솔을 통해 데이터 출력. 디버깅 할때 굉장한 도움이 된다.</p>
+    <p>크롬의 f12를 눌러서 console칸에 가면 데이터를 확인 할수 있다.</p>
+    <script>
+        console.log(10 - 1);
+    </script>
+
+
+    <hr style="clear: both;">
+    <p style="clear: both;"><a href="../index.html"> 첫페이지로</a></p>
+</body>
+
+</html>

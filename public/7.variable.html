@@ -1,0 +1,74 @@
+<!-- HTML 5 선언 -->
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <!-- 
+        meta 설명
+        문자셋 
+        검색 엔진용 참조
+        설명
+        저작권자
+        모바일 용 화면비율
+    -->
+    <meta charset="UTF-8">
+    <meta name="keyword" content="javascript">
+    <meta name="description" content="첫 시작">
+    <meta name="author" content="chohyunsu">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 외부 스타일 시트 연결 -->
+    <link rel="stylesheet" href="../css/indexStyle.css">
+    <!-- 내부 스타일 시트 설정 -->
+    <style>
+        #id {}
+
+        .class {}
+    </style>
+    <!-- JS 외부파일 연결 -->
+    <script src="위치"></script>
+
+    <title> javascript 모음</title>
+
+</head>
+
+<body>
+
+    <h1>- 변수 선언 초기화 -</h1>
+    <p> &plus; 각종 변수의 선언과 초기화 방식이 있다</p>
+    <p id="result"></p>
+    <!-- js 내부연결 -->
+    <script>
+        var month; // 변수 선언
+        var date = 25; // 선언 및 초기화
+        month = 12; // 변수 초기화
+
+        document.getElementById("result").innerHTML
+            = "<b>1.</b> 현재 날짜 : " + month + "월 " + date + "일 입니다.<br><br>";
+    </script>
+
+    <script>
+        var num1, num2; // 동시 선언
+        var ex1 = 1, ex2 = 2; // 동시 선언 및 초기화
+        num1 = 10, num2 = 20; // 동시 초기화
+
+        document.getElementById("result").innerHTML
+            += "<b>2.</b> num1 : " + num1 + ", num2 : " + num2 + " / ex1 : " + 1 + ", ex2 : " + ex2 + "<br><br>";
+    </script>
+
+    <script>
+        var str = "배열 예시 : "; // 타입 문자열 변수 선언
+        var num = [10, 20, 30]; // 배열 선언
+        var num; // 이 선언은 무시된다
+
+        document.getElementById("result").innerHTML
+            += "<b>3.</b> " + str + num + "<br><br>";
+    </script>
+
+    <hr style="clear: both;">
+    <p style="clear: both;"><a href="../index.html"> 첫페이지로</a></p>
+
+</body>
+
+</html>

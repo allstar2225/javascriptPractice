@@ -1,0 +1,8 @@
+/* body & 제목 태그 */
+.body-normal {
+    text-align: center; 
+    padding: 10px;
+}
+.h1-normal {
+    font-family: 'Times New Roman', Times, serif; font-weight: normal;
+}

@@ -1,0 +1,128 @@
+<!-- HTML 5 선언 -->
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <!-- 
+        meta 설명
+        문자셋 
+        검색 엔진용 참조
+        설명
+        저작권자
+        모바일 용 화면비율
+    -->
+    <meta charset="UTF-8">
+    <meta name="keyword" content="javascript">
+    <meta name="description" content="첫 시작">
+    <meta name="author" content="chohyunsu">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 외부 스타일 시트 연결 -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- 내부 스타일 시트 설정 -->
+    <style>
+        #id {}
+
+        .class {}
+    </style>
+
+
+
+    <title> javascript 모음</title>
+
+</head>
+
+<body>
+
+    <h1>- 숫자타입 (Number Type) -</h1>
+    <p> &plus; 숫자타입의 데이터를 출력</p>
+    <p id="number"></p>
+    <!-- js 내부연결 -->
+    <script>
+        var Num1 = 10;
+        var Num2 = 10.01;
+        var Num3 = 10e6;
+        var Num4 = 10e-1;
+        document.getElementById("number").innerHTML
+            = Num1 + "<br>" + Num2 + "<br>" + Num3 + "<br>" + Num4 + "<br>";
+    </script>
+
+    <hr>
+    <h1>- 문자타입 (String Type) -</h1>
+    <p> &plus; 문자타입의 데이터를 출력</p>
+    <p id="string"></p>
+    <!-- js 내부연결 -->
+    <script>
+        var String1 = "큰 따옴표 문자열";
+        var String2 = '작은 따옴표 문자열';
+        var String3 = "'작은 따옴표'";
+        var String4 = '"큰 따옴표"';
+        document.getElementById("string").innerHTML
+            = String1 + "<br>" + String2 + "<br>" + String3 + "<br>" + String4 + "<br>";
+    </script>
+
+    <hr>
+    <h1>- 불리언타입 (Boolean Type) -</h1>
+    <p> &plus; 데이터의 참과 거짓을 출력</p>
+    <p id="boolean"></p>
+    <!-- js 내부연결 -->
+    <script>
+        var First = "맞";
+        var Second = "맞";
+        document.getElementById("boolean").innerHTML
+            = (First == Second) + "<br>" + (First = !Second);
+    </script>
+
+    <hr>
+    <h1>- 심볼 타입 (Symbol Type) -</h1>
+    <p> &plus; object의 property를 위한 식별자로 사용</p>
+    <p id="symbol"></p>
+    <!-- js 내부연결 -->
+    <script>
+        var sym = Symbol("심볼문자");
+        var symobj = Object(sym);
+        document.getElementById("symbol").innerHTML
+            = (typeof sym) + "<br>" + (typeof symobj);
+    </script>
+
+    <hr>
+    <h1>- typeof 타입 (typeof Type) -</h1>
+    <p> &plus; 피연산자의 타입을 반환하는 피연산자가 단 하나뿐인 연산자</p>
+    <p id="typeof""></p>
+    <!-- js 내부연결 -->
+    <script>
+        document.getElementById(" typeof").innerHTML = (typeof 10) + "<br>"; document.getElementById("typeof").innerHTML
+            += (typeof "문자") + "<br>"; document.getElementById("typeof").innerHTML += (typeof true) + "<br>";
+        document.getElementById("typeof").innerHTML += (typeof undefined) + "<br>";
+        document.getElementById("typeof").innerHTML += (typeof null); </script>
+
+        <hr>
+    <h1>- null과 undefined 타입 (null, undefined Type) -</h1>
+    <p> &plus; 아직 값이 정해지지 않은 것은 null, 타입이 정해지지 않은것은 undefined</p>
+    <p id="twoType"></p>
+    <!-- js 내부연결 -->
+    <script>
+        var num;
+        var string = null;
+        typeof num2;
+        document.getElementById("twoType").innerHTML
+            = (typeof num) + "<br>" + (typeof string) + "<br>" + (typeof num2);
+    </script>
+
+
+    <hr>
+    <h1>- 객체 타입 (object Type) -</h1>
+    <p> &plus; 기본 타입인 객체. property 나 method 같은 이름으로 묶어 놓는다.</p>
+    <p id="object"></p>
+    <!-- js 내부연결 -->
+    <script>
+        var dog = { name: "똥개", age: 5 }; // 객체 생성
+        document.getElementById("object").innerHTML
+            = "강아지의 이름은 " + dog.name + " 이고 나이는 " + dog.age + " 이다.";
+    </script>
+    <hr style="clear: both;">
+    <p style="clear: both;"><a href="../index.html"> 첫페이지로</a></p>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!-- HTML 5 선언 -->
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <!-- 
+        meta 설명
+        문자셋 
+        검색 엔진용 참조
+        설명
+        저작권자
+        모바일 용 화면비율
+    -->
+    <meta charset="UTF-8">
+    <meta name="keyword" content="javascript">
+    <meta name="description" content="첫 시작">
+    <meta name="author" content="chohyunsu">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 외부 스타일 시트 연결 -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- 내부 스타일 시트 설정 -->
+    <style>
+        #id {}
+
+        .class {}
+
+    </style>
+
+    <title> javascript 모음</title>
+
+</head>
+
+<body>
+
+    <h1>- 기본문법 -</h1>
+    <p> &plus; 실행문은 세이콜론(;) 으로 구분</p>
+    <script>
+        var x = 10;
+        document.write(x);
+    </script>
+    <pre>
+        - 위의 문법 -
+        var x = 10;
+        document.write(x);
+    </pre>
+
+    <hr>
+    <h1>- 기본문법2 -</h1>
+    <p> &plus; 대소문자를 구분하기때문에 변수나 함수의 이름, 예약어 작성시 대소문을 확실히 구분해야한다.</p>
+    <script>
+        var Java = 10;
+        var java = 20;
+        document.write(Java + " 이 값은 Java <br>");
+        document.write(java + " 이 값은 java ");
+    </script>
+    <pre>
+        - 위의 문법 -
+        var Java = 10;
+        var java = 20;
+        document.write(Java + " 이 값은 Java ");
+        document.write(java + " 이 값은 java ");
+    </pre>
+
+    <hr>
+    <h1>- 리터럴(literal) -</h1>
+    <p> &plus; 직접 표현되는 값</p>
+    <script>
+        document.write(12); // 숫자 리터럴
+        document.write("<br> 안녕 <br>"); // 문자 리터럴
+        document.write(true); // 불리언 리터럴
+    </script>
+    <pre>
+        - 위의 문법 -
+        document.write(12); // 숫자 리터럴
+        document.write("안녕"); // 문자 리터럴
+        document.write(true); // 불리언 리터럴
+    </pre>
+
+    <hr>
+    <h1>- 식별자(identifier) -</h1>
+    <p> &plus; 변수나 함수의 이름을 작설할떄 사용하는 이름</p>
+    <script>
+        var firstJava = 20; // camel Case 방식
+        var first_java = 30; // underscore Case 방식
+        document.write(firstJava);
+        document.write(first_java);
+    </script>
+    <pre>
+        - 위의 문법 -
+        var firstJava = 20; // camel Case 방식
+        var first_java = 30; // underscore Case 방식
+        document.write(firstJava);
+        document.write(first_java);
+    </pre>
+
+    
+    <hr style="clear: both;">
+    <p style="clear: both;"><a href="../index.html"> 첫페이지로</a></p>
+</body>
+
+</html>
