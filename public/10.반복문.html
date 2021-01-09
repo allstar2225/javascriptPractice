@@ -113,12 +113,20 @@
     <h1>- for / of 문 -</h1>
     <p> &plus; 반복할수 있는 객체를 순회하도록 해준다. 반복객체로는 Array, Map, Set, arguments가 있다.</p>
     <pre>
+        - 첫번쨰 -
         var arr = [3,4,5];
         for( var i = 0; i < arr.length; i++) { // 일반적인 for문
             document.write(arr[i]);
         }
         for ( var value of arr) { // of를 사용하여 위와 같은 같은 결과를 얻을수 있다.
             document.write(value);
+        }
+
+        - 두번째 -
+        var arr2 = new Set([1, 1, 2, 2, 3, 3]);
+
+        for (var value of arr2) {
+            document.write("<br>" + value + "<br> ")
         }
     </pre>
     <script>
@@ -129,6 +137,14 @@
         for ( var value of arr) { // of를 사용하여 위와 같은 같은 결과를 얻을수 있다.
             document.write(value + "<br>");
         }
+    </script>
+    <script>
+        var arr2 = new Set([1, 1, 2, 2, 3, 3]);
+
+        for (var value of arr2) {
+            document.write("<br>" + value + "<br> ")
+        }
+        
     </script>
     <hr style="clear: both;">
     <p style="clear: both;"><a href="../index.html"> 첫페이지로</a></p>

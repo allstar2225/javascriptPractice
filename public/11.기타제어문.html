@@ -1,0 +1,142 @@
+<!-- HTML 5 선언 -->
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <!-- 
+        meta 설명
+        문자셋 
+        검색 엔진용 참조
+        설명
+        저작권자
+        모바일 용 화면비율
+    -->
+    <meta charset="UTF-8">
+    <meta name="keyword" content="javascript">
+    <meta name="description" content="첫 시작">
+    <meta name="author" content="chohyunsu">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 외부 스타일 시트 연결 -->
+    <link rel="stylesheet" href="../css/indexStyle.css">
+    <!-- 내부 스타일 시트 설정 -->
+    <style>
+        #id {}
+
+        .class {}
+    </style>
+
+    <!-- js 내부연결 -->
+    <script>
+
+    </script>
+    <!-- JS 외부파일 연결 -->
+    <script src="위치"></script>
+
+    <title> javascript 모음</title>
+
+</head>
+
+<body>
+
+    <h1>- continue문 -</h1>
+    <p> &plus; loop내에서 해당 조건의 루프를 건너뛰고 다음 표현식으로 넘거가게한다.</p>
+    <pre>
+        - 첫번째 -
+        var Num = 3;
+
+        for (var i = 0; i <= 100; i++){
+            if (i % Num == 0) // 3의 배수를 제외하고 출력한다
+            continue;
+            document.write( i + " ");
+        }
+
+        - 두번째 -
+        gugudan: // 라벨
+        for (var i=1; i <= 9; i++){
+            dan: // 라벨
+            for(var j=1; j <=9; j++){
+                if((i*j) % 2 == 0) // i*j 일때 2의 배수는 빼고 이어진다.
+                continue dan; // dan 라벨의 for문이 이어진다
+                document.write(i + " * " + j + " = " + (i*j));
+            }
+        }
+    </pre>
+    <script>
+        var Num = 3;
+
+        for (var i = 0; i <= 100; i++) {
+            if (i % Num == 0) // 3의 배수를 제외하고 출력한다
+                continue;
+            document.write(i + " ");
+        }
+    </script>
+    <br><br>
+    <script>
+        gugudan: // 라벨
+        for (var i = 1; i <= 9; i++) {
+            dan: // 라벨
+            for (var j = 1; j <= 9; j++) {
+                if ((i * j) % 2 == 0) // i*j 일때 2의 배수는 빼고 이어진다.
+                    continue dan; // dan 라벨의 for문이 이어진다
+                document.write(i + " * " + j + " = " + (i * j) + "<br>");
+            }
+        }
+    </script>
+    <hr>
+
+    <h1>- break문 -</h1>
+    <p> &plus; loop내에서 해당 조건의 루프에서 완전히 종료시키고, 반복문을 벗어나게 한다.</p>
+    <pre>
+        - 첫번째 -
+        gugudan: // 라벨
+        for (var i = 1; i <= 9; i++) { // 앞 부분 i가 9보다 작거나 같으면 1씩 증가
+            dan: // 라벨
+            for (var j = 1; j <= 9; j++) { // 앞 부분 j가 9보다 작거나 같으면 1씩 증가
+                if (i > 3) // i가 3보다 작을때
+                    break gugudan; // gugudan의 for문을 종료시킨다
+                document.write(i + " * " + j + " = " + (i * j));
+            }
+        }
+
+        - 두번째 -
+        var lectures = ["html", "css", "javascript", "php"]; // 배열
+        var topic = "javascript"; // 문자열 선언
+
+        for (var i = 0; i < lectures.length; i++) { // i가 배열보다 작을때 1씩 증가
+            if (lectures[i] == topic) { // 배열의i가 topic의 문자열과 같을때
+                document.write(topic + " 과목은 " + (i+1) + "번쨰 과목."); // i+1을 하며 topic과 배열의 문자열이 같으면
+                break; // for문을 빠져나온다
+            }
+    </pre>
+    <script>
+        gugudan: // 라벨
+        for (var i = 1; i <= 9; i++) { // 앞 부분 i가 9보다 작거나 같으면 1씩 증가
+            dan: // 라벨
+            for (var j = 1; j <= 9; j++) { // 앞 부분 j가 9보다 작거나 같으면 1씩 증가
+                if (i > 3) // i가 3보다 작을때
+                    break gugudan; // gugudan의 for문을 종료시킨다
+                document.write(i + " * " + j + " = " + (i * j) + "<br>");
+            }
+        }
+    </script>
+    <br><br>
+    <script>
+        var lectures = ["html", "css", "javascript", "php"]; // 배열
+        var topic = "javascript"; // 문자열 선언
+
+        for (var i = 0; i < lectures.length; i++) { // i가 배열보다 작을때 1씩 증가
+            if (lectures[i] == topic) { // 배열의i가 topic의 문자열과 같을때
+                document.write(topic + " 과목은 " + (i + 1) + "번쨰 과목."); // i+1을 하며 topic과 배열의 문자열이 같으면
+                break; // for문을 빠져나온다
+            }
+        }
+    </script>
+
+
+    <hr style="clear: both;">
+    <p style="clear: both;"><a href="../index.html"> 첫페이지로</a></p>
+</body>
+
+</html>
