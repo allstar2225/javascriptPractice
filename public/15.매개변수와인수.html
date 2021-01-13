@@ -1,0 +1,139 @@
+<!-- HTML 5 선언 -->
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <!-- 
+        meta 설명
+        문자셋 
+        검색 엔진용 참조
+        설명
+        저작권자
+        모바일 용 화면비율
+    -->
+    <meta charset="UTF-8">
+    <meta name="keyword" content="javascript">
+    <meta name="description" content="첫 시작">
+    <meta name="author" content="chohyunsu">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 외부 스타일 시트 연결 -->
+    <link rel="stylesheet" href="../css/indexStyle.css">
+    <!-- 내부 스타일 시트 설정 -->
+    <style>
+        #id {}
+
+        .class {}
+    </style>
+
+    <!-- js 내부연결 -->
+    <script>
+
+    </script>
+    <!-- JS 외부파일 연결 -->
+    <script src="위치"></script>
+
+    <title> javascript 모음</title>
+
+</head>
+
+<body>
+
+    <h1>- 매개변수(parameter) 와 인수(argument) -</h1>
+    <p> &plus; 매개변수는 전달받은 인수를 함수 내부로 전달하기 위해 사용하는 변수</p>
+    <p> &plus; 인수는 함수가 호출될때 함수로 값을 전달해주는 값.</p>
+    <script>
+        function para(x, y, z) { // function 함수명 ( 매개변수 )
+            return x + y + z; // 인수로 받은 값을 계산하여 반환
+        }
+        document.write("인수가 3개 모두 전달 : " + para(1, 2, 3) + "<br>"); // 인수로 1,2,3을 전달하여 함수 호출
+        document.write("인수가 2개 전달 : " + para(1, 2) + "<br>") // 인수로 1,2를 전달하여 함수 호출하지만, 조건 충족이 되지 않아 결과 X
+        document.write("인수가 1개 전달 : " + para(1) + "<br>") // 인수로 1를 전달하여 함수 호출하지만, 조건 충족이 되지 않아 결과 X
+        document.write("인수 전달 없음 : " + para() + "<br>") // 인수없이 전달하여 함수 호출하지만, 조건 충족이 되지 않아 결과 X
+    </script>
+
+    <h1>- if를 사용한 응용법 -</h1>
+    <p> &plus; if를 사용해 조건에 만족하지 않아도 값을 띄워줄수 있다.</p>
+    <script>
+        function para(x, y, z) { // function 함수명 ( 매개변수 )
+            if (x === undefined) // 함수 호출시 x에 해당하는 인수가 전달되지 않으면
+                x = 0; // 매개변수 x의 값을 0으로 변경
+            if (y === undefined) // 함수 호출시 y에 해당하는 인수가 전달되지 않으면
+                y = 0; // 매개변수 y의 값을 0으로 변경
+            if (z === undefined) // 함수 호출시 y에 해당하는 인수가 전달되지 않으면
+                z = 0; // 매개변수 y의 값을 0으로 변경
+            return x + y + z; // 인수로 받은 값을 계산하여 반환
+        }
+        document.write("인수가 3개 모두 전달 : " + para(1, 2, 3) + "<br>"); // 인수로 1,2,3을 전달하여 함수 호출
+        document.write("인수가 2개 전달 : " + para(1, 2) + "<br>") // 인수로 1,2를 전달하여 함수 호출하지만, 조건 충족이 되지 않아 결과 X
+        document.write("인수가 1개 전달 : " + para(1) + "<br>") // 인수로 1를 전달하여 함수 호출하지만, 조건 충족이 되지 않아 결과 X
+        document.write("인수 전달 없음 : " + para() + "<br>") // 인수없이 전달하여 함수 호출하지만, 조건 충족이 되지 않아 결과 X
+    </script>
+
+    <h1>- 인수(argument) 객체 -</h1>
+    <p> &plus; 함수의 정의보다 많은 인수가 전달되면 대입되지 않는다. 대신 인수 객체를 사용하면 각각의 인수에도 접근 가능.</p>
+    <script>
+        function para() { // function 함수명 ( 매개변수 )
+            var sum = 0; // 합을 저장할 변수 선언
+            for (var i = 0; i < arguments.length; i++) { // 전달 받은 인수의 수만큼 for문 실행
+                sum += arguments[i]; // sum의 변수에 인수를 더한다
+            }
+            return sum; // 값을 반환할 리턴 변수
+        }
+        document.write("인수가 3개 모두 전달 : " + para(1, 2, 3) + "<br>"); // 인수로 1,2,3을 전달하여 함수 호출
+        document.write("인수가 2개 전달 : " + para(1, 2) + "<br>") // 인수로 1,2를 전달하여 함수 호출하지만, 조건 충족이 되지 않아 결과 X
+        document.write("인수가 1개 전달 : " + para(1) + "<br>") // 인수로 1를 전달하여 함수 호출하지만, 조건 충족이 되지 않아 결과 X
+        document.write("인수 전달 없음 : " + para() + "<br>") // 인수없이 전달하여 함수 호출하지만, 조건 충족이 되지 않아 결과 X
+        document.write("인수 10개  : " + para(1, 2, 3, 4, 5, 6, 7, 8, 9, 10) + "<br>") // 인수없이 전달하여 함수 호출하지만, 조건 충족이 되지 않아 결과 X
+    </script>
+
+    <h1>- 디폴트 매개변수 (default parameter) -</h1>
+    <p> &plus; ECMAScript6부터 새롭게 정의되었으며, 함수를 호출할 때 명시된 인수를 전달 못받을 경우 사용할 기본값 (원래 기본값은 undefined)</p>
+    <script>
+        function deFault(a, b) { // a와 b 라는 매개변수 선언
+            // 인수가 하나만 전달되면 나머지 값은 undefined가 아닌 코딩자가 지정한 값을 반환한다
+            b = (typeof b !== 'undefined') ? b : 1; // b라는 객채가 undefined일 경우 1로 띄워라
+            return a * b;
+        }
+        document.write("인수가 2개 전달된 반환값 : " + deFault(3, 4) + " 입니다.<br>")
+        document.write("인수가 1개 전달된 반환값 : " + deFault(2) + "입니다.<br>")
+        function deFault2(a, b = 1) { // a와 b 라는 매개변수 선언 및 기본값을 undefined에서 1로 지정한다.
+            return a * b;
+        }
+        document.write("인수가 2개 전달된 반환값 : " + deFault2(2, 10) + " 입니다.<br>")
+        document.write("인수가 1개 전달된 반환값 : " + deFault2(1) + "입니다.<br>")
+    </script>
+
+    <h1>- 나머지 매개변수(rest parameter) -</h1>
+    <p> &plus; ECMAScript6부터 새롭게 정의되었으며, 생략 접두사(...)를 사용, 특정 위치 인수부터 마지막 인수까지 한번에 지정 가능</p>
+    <script>
+        // 방법1
+        function restParameter(){
+            var firstVa = arguments[0] // 인수객채 생성 및 첫번째 인수
+            for(i = 0; i < arguments.length-1; i++){ // 두번쨰 인수까지
+                firstVa -= arguments[i+1] // 뺀다
+            }
+            return firstVa;
+        }
+        // 인수가 전달되는 수만큼 for문으로 길이가 늘어난다.
+        document.write(restParameter(10,2,3) + "<br>"); 
+        document.write(restParameter(10,1,5,8) + "<br>");
+
+        // 방법2
+        function restParameter2(firstNum, ...restArgs){ // 첫번쨰 인수를 변수 firstNum에 저장, 나머지 인수는 restArgs 배열에 저장
+            for(i = 0; i < restArgs.length; i++){ //  인수의 갯수만큼 실행문이 반복한다.
+                firstNum *= restArgs[i]; // 인수값을 곱한다
+            }
+            return firstNum; // firstNum에 저장된 값을 반환
+        }
+        // 인수가 전달되는 수만큼 for문으로 길이가 늘어난다.
+        document.write(restParameter2(10,2,3) + "<br>"); 
+        document.write(restParameter2(10,1,5,8) + "<br>");
+    </script>
+
+    <hr style="clear: both;">
+    <p style="clear: both;"><a href="../index.html"> 첫페이지로</a></p>
+</body>
+
+</html>

@@ -1,0 +1,195 @@
+<!-- HTML 5 선언 -->
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <!-- 
+        meta 설명
+        문자셋 
+        검색 엔진용 참조
+        설명
+        저작권자
+        모바일 용 화면비율
+    -->
+    <meta charset="UTF-8">
+    <meta name="keyword" content="javascript">
+    <meta name="description" content="첫 시작">
+    <meta name="author" content="chohyunsu">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 외부 스타일 시트 연결 -->
+    <link rel="stylesheet" href="../css/indexStyle.css">
+    <!-- 내부 스타일 시트 설정 -->
+    <style>
+        #id {}
+
+        .class {}
+    </style>
+
+    <!-- js 내부연결 -->
+    <script>
+
+    </script>
+    <!-- JS 외부파일 연결 -->
+    <script src="위치"></script>
+
+    <title> javascript 모음</title>
+
+</head>
+
+<body>
+
+    <h1>- eval() -</h1>
+    <p> &plus; 문자열로 표현된 javascript 코드를 실행</p>
+    <script>
+        var x = 10, y = 20;
+        var a = eval("x + y"); // 문자열을 계산
+        var b = eval("y * 3"); // 문자열을 계산
+        document.write("a 문자열 계산값 : " + a + "<br>");
+        document.write("b 문자열 계산값 : " + b + "<br>");
+    </script>
+
+    <h1>- isFinite() -</h1>
+    <p> &plus; 전달된 인수값이 유한한 수인지 검사하여 결과를 반환. 숫자가 아니면 숫자로 반환하여 검사.</p>
+    <script>
+        document.write(isFinite(123) + "<br>");
+        document.write(isFinite(123e100) + "<br>");
+        document.write(isFinite(0) + "<br>");
+        document.write(isFinite(true) + "<br>");
+        document.write(isFinite(false) + "<br>");
+        document.write(isFinite(null) + "<br>");
+        document.write(isFinite("123") + "<br>");
+        document.write(isFinite("") + "<br>");
+        document.write(isFinite("문자열") + "<br>");
+        document.write(isFinite(undefined) + "<br>");
+        document.write(isFinite(NaN) + "<br>");
+    </script>
+
+    <h1>- isNaN() -</h1>
+    <p> &plus; 전달된 인수값이 NaN인지 검사. 결과를 반환. 숫자가 아니라면 강제로 변환하여 검사.</p>
+    <script>
+        document.write(isNaN(123) + "<br>");
+        document.write(isNaN(123e100) + "<br>");
+        document.write(isNaN(0) + "<br>");
+        document.write(isNaN(true) + "<br>");
+        document.write(isNaN(false) + "<br>");
+        document.write(isNaN(null) + "<br>");
+        document.write(isNaN("123") + "<br>");
+        document.write(isNaN("") + "<br>");
+        document.write(isNaN("문자열") + "<br>");
+        document.write(isNaN(undefined) + "<br>");
+        document.write(isNaN(NaN) + "<br>");
+    </script>
+
+    <h1>- parseFloat() -</h1>
+    <p> &plus; 문자열을 파싱하여 부동 소수점의 수로 반환</p>
+    <script>
+        document.write(parseFloat("123") + "<br>");
+        document.write(parseFloat("123.000") + "<br>");
+        document.write(parseFloat("123.456") + "<br>");
+        document.write(parseFloat("12 34 56") + "<br>");
+        document.write(parseFloat(" 123 ") + "<br>");
+        document.write(parseFloat("123 초콜릿") + "<br>");
+        document.write(parseFloat("초콜릿 123") + "<br>");
+    </script>
+
+    <h1>- parseInt() -</h1>
+    <p> &plus; 문자열을 파싱하여 정수로 반환</p>
+    <script>
+        document.write(parseInt("123") + "<br>");
+        document.write(parseInt("123.000") + "<br>");
+        document.write(parseInt("123.456") + "<br>");
+        document.write(parseInt("12 34 56") + "<br>");
+        document.write(parseInt(" 123 ") + "<br>");
+        document.write(parseInt("123 초콜릿") + "<br>");
+        document.write(parseInt("초콜릿 123") + "<br>");
+
+        document.write(parseInt("10",10) + "<br>");
+        document.write(parseInt("10",8) + "<br>");
+        document.write(parseInt("10",16) + "<br>");
+        document.write(parseInt("0x16") + "<br>"); // 16진수
+    </script>
+
+    <h1>- encodeUI(), encodeURIComponent() -</h1>
+    <p> &plus; encodeUI()는URI에서 주소를 표시하는 특수문자를 제외하고, 모든 문자를 이스케이프 시퀀스 처리하여 부호화함. 하지만 encodeURIComponent()는 부호화 하지 않은 모든 문자까지 이스케이프 시퀀스 처리함</p> 
+    <script>
+        var uri = "https://www.youtube.com/watch?v=UOEJVi4XHdg"
+
+        var enc1 = encodeURI(uri);
+        var enc2 = encodeURIComponent(uri);
+
+        document.write("encodeUI() 메소드 : " + enc1 + "<br>")
+        document.write("encodeURIComponent() 메소드 : " + enc2 + "<br>")
+    </script>
+
+    <h1>- dencodeUI(), dencodeURIComponent() -</h1>
+    <p> &plus; dencodeUI()는 다른 방법으로 만들어진 URI를 해독. dencodeURIComponent()는 encodeURIComponent()나 다른 방법으로 만들어진 uri컴포넌트를 해독 </p> 
+    <script>
+        var uri = "https://www.youtube.com/watch?v=UOEJVi4XHdg"
+
+        var enc1 = encodeURI(uri);
+        var enc2 = encodeURIComponent(uri);
+
+        document.write("encodeUI() 메소드 : " + enc1 + "<br>")
+        document.write("encodeURIComponent() 메소드 : " + enc2 + "<br>")
+
+        var dec1 = decodeURI(enc1);
+        var dec2 = decodeURIComponent(enc2);
+        
+        document.write("<br>")
+        document.write("dencodeUI() 메소드 : " + dec1 + "<br>")
+        document.write("dencodeURIComponent() 메소드 : " + dec2 + "<br>")
+    </script>
+
+    <h1>- escape() , unescape() -</h1>
+    <p> &plus; 전달받은 문자열에서 특정 문자들을 16진법 이스케이프 시퀀스 문자로 변환. unescape() 전달받은 문자열에서 escape() 함수나 다른 방법으로 만들어진 16진법 이스케이프 시퀀스 문자를 원래의 문자로 전환</p> 
+    <script>
+        var str = "hello world @#!";
+
+        var esc = escape(str);
+        var uec = unescape(esc);
+
+        document.write("escape() 메소드 : " + esc + "<br>");
+        document.write("unescape() 메소드 : " + uec + "<br>");
+
+    </script>
+
+    <h1>- number() -</h1>
+    <p> &plus; 전달받은 객체의 값을 숫자로 반환</p> 
+    <script>
+        document.write(Number("123") + "<br>");
+        document.write(Number("123.000") + "<br>");
+        document.write(Number("123.456") + "<br>");
+        document.write(Number("12 34 56") + "<br>");
+        document.write(Number("123 초콜릿") + "<br>");
+        document.write("<br>")
+        document.write(Number(true) + "<br>");
+        document.write(Number(false) + "<br>");
+        document.write(Number(new Date()) + "<br>");
+        document.write(Number(null) + "<br>");
+
+    </script>
+
+    <h1>- String() -</h1>
+    <p> &plus; 전달받은 객체의 값을 문자열로 반환</p> 
+    <script>
+        document.write(String(123) + "<br>");
+        document.write(String(123.456) + "<br>");
+        document.write(String("123") + "<br>");
+        document.write(String(new Date()) + "<br>");
+        document.write(String(null) + "<br>");
+        document.write("<br>")
+        document.write(String(true) + "<br>");
+        document.write(String(false) + "<br>");
+        document.write(String(Boolean(1)) + "<br>");
+        document.write(String(Boolean(0)) + "<br>");
+
+    </script>
+
+
+    <hr style="clear: both;">
+    <p style="clear: both;"><a href="../index.html"> 첫페이지로</a></p>
+</body>
+
+</html>
