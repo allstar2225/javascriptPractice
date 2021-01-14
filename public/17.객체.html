@@ -1,0 +1,106 @@
+<!-- HTML 5 선언 -->
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <!-- 
+        meta 설명
+        문자셋 
+        검색 엔진용 참조
+        설명
+        저작권자
+        모바일 용 화면비율
+    -->
+    <meta charset="UTF-8">
+    <meta name="keyword" content="javascript">
+    <meta name="description" content="첫 시작">
+    <meta name="author" content="chohyunsu">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 외부 스타일 시트 연결 -->
+    <link rel="stylesheet" href="../css/indexStyle.css">
+    <!-- 내부 스타일 시트 설정 -->
+    <style>
+        #id {}
+
+        .class {}
+    </style>
+
+    <!-- js 내부연결 -->
+    <script>
+
+    </script>
+    <!-- JS 외부파일 연결 -->
+    <script src="위치"></script>
+
+    <title> javascript 모음</title>
+
+</head>
+
+<body>
+
+    <h1>- 자바스크립트의 객체(object) -</h1>
+    <p> &plus; 그냥 간단하게 사물이라 생각하면 된다. javascript에서의 기본 타입은 객체로써 각각의 property값을 가진다.</p>
+    <script>
+        var dog = "강아지"; // 일반적인 변수선언
+        var dogObj = { name: "인절미", family: "시고르자브종", age: 1, weight: 5.6 };
+
+        document.write("일반 변수 호출 : " + dog + "<br>");
+        document.write("객체화 된 변수 호출 : " + "이름 | " + dogObj.name + ", 나이 | " + dogObj.age + "살 이다.<br>");
+    </script>
+
+    <h1>- 객체의 프로퍼티 -</h1>
+    <p> &plus; 객체에 property를 참조하는 방법</p>
+    <script>
+        var person = {
+            name: "조현수",
+            birthday: "881210",
+            pId: "1234567",
+            fullId: function () {
+                return this.birthday + ("-") + this.pId; // 생년월일과 등본뒷자리를 합친다
+            }
+        }
+        document.write("이름 : " + person.name + "<br>");
+        document.write("생일 : " + person.birthday + "<br>");
+        document.write("주민등록번호: " + person.fullId() + "<br>");
+        document.write("주민등록번호: " + person.fullId + "<br>"); // ()없이 함수를 호출하면 property값 그 자체를 불러낸다.
+    </script>
+
+    <h1>- 객체의 생성방법 (리터럴 표기 (literal notation))-</h1>
+    <p> &plus; 객체를 생성하는 가장 쉬운방법은 리터럴 표기이다.</p>
+    <script>
+        var cat = {
+            name : "키티",
+            family : "스코티쉬 폴드",
+            age : 1
+        }
+        document.write("고양이의 이름 : " + cat.name + ", 고양이종 : " + cat.family + ", 나이 : " + cat.age + "<br>")
+    </script>
+
+    <h1>- 객체의 생성방법 (생성자 함수 (constructor function))-</h1>
+    <p> &plus; new 연산자를 사용하여 객체 생성을 초기화 한다. 사용되는 메소드는 생성자이며, 새롭게 생성되는 객체를 초기화 한다.</p>
+    <script>
+        var day = new Date(); //new 를 사용하여 Date타입 객체 생성
+        document.write("올해는 " + day.getFullYear() + " 년입니다 <br>"); //getFullYear()로 객체 초기화
+    </script>
+
+    <h1>- 객체의 생성방법 (Object.create()))-</h1>
+    <p> &plus; 지정된 프로토타입 객체와 프로퍼티를 가진 새로운 객체를 만들어준다. 이 메소드를 이용하면 프로토타입 객체를 직접 명시할수 있어서 유용하다.</p>
+    <p> &plus; Object.create(프로토타입객체, { 객체명 : {프로퍼티값}, 객체명 : {프로퍼티값}, ... }) , </p>
+    <script>
+        var obj = Object.create (null, {
+            x : { value : 100, enumerable : true}, // x값을 열거할 속성
+            y : { value : 200, enumerable : true} // y값을 열거할 속성
+        });
+        document.write(obj.x + "<br>"); // 
+        document.write(obj.y + "<br>");
+        document.write(Object.getPrototypeOf(obj)); // 객체를 프로토타입으로
+    </script>
+
+
+    <hr style="clear: both;">
+    <p style="clear: both;"><a href="../index.html"> 첫페이지로</a></p>
+</body>
+
+</html>
