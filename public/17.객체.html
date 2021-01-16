@@ -100,6 +100,9 @@
 
     <h1>- 프로토타입(prototype) -</h1>
     <p> &plus; 객체 생성자 함수를 작성하여 프로토타입을 생성. 가장 기본적이다.</p>
+    <p> &plus; 추가로 this키워드는 해당 키워드가 사용된 자바스크립트 코드 영역을 포함하고 있는 객체를 가리킨다. 
+        예를 들어, 메소드 내부에서 사용된 this는 해당 메소드를 포함하고 있는 객체를 가리키고, 객체 내부에서 사용된 this는 객체 그 자신을 가리킨다. 이러한 this는 변수가 아닌 키워드 이므로, 사용자가 임의로 가리키는 값을 바꿀수 없다.
+    </p>
     <script>
         function Dogs(color, name, age){ // 3가지의 매개변수 선언
             this.color = color; // 색에 관한 프로퍼티
@@ -167,6 +170,72 @@
         document.write("우리집 강아지종은 " + myDog.family + " 이고, 친구네 집 강아지도 " + hisDog.family + " 이다.<br>");
         document.write("우리집 강아지는 " + myDog.breed() + "이다.<br>");
         document.write("그 애 강아지는 " + hisDog.breed() + "이다.<br>");
+    </script>
+
+    <h1>- 객체 프로퍼티 삭제 -</h1>
+    <p> &plus; delete 키워드를 사용하여 객체 프로퍼티를 삭제 할수있다. 단, 함수나 변수에 사용하면 동작하지 않는다.</p>
+    <script>
+        function Dogs(color, name, age){ // 3가지의 매개변수 선언
+            this.color = color; // 색에 관한 프로퍼티
+            this.name = name; //이름에 관한 프로퍼티
+            this.age = age; // 나이에 관한 프로퍼티
+            }
+        Dogs.prototype.family = "시베리안 허스키"; // Dogs라는 프로토타입에 family 프로퍼티 추가
+        Dogs.prototype.breed = function(){
+            return this.color + " " + this.family;
+        } // Dogs라는 프로토타입에 breed method 추가
+        
+        var myDog = new Dogs("흰색","콩이",1);
+        var hisDog = new Dogs("갈색","마루",2);
+
+        delete myDog.age; // 객체 프로퍼티 삭제
+
+        document.write("우리집 강아지의 나이는 " + myDog.age + "이다.<br>"); // age가 삭제 되었으므로 undefined가 뜬다.
+    </script>
+
+    <h1>- 객체의 순회 -</h1>
+    <p> &plus; for/in 문을 사용하여 프로퍼티를 순회한다.<br>
+        이외에도 Object.keys()로 해당 객체가 가진 고유 프로퍼티 중에서 열거할 수 있는 프로퍼티 이름을 배열에 담아 반환한다. <br>
+        Object.getOwnPropertyNames()는 해당 객체가 가진 모든 고유 프로퍼티의 이름을 배열에 담아 반환</p>
+    <script>
+        function Dogs(color, name, age){ // 3가지의 매개변수 선언
+            this.color = color; // 색에 관한 프로퍼티
+            this.name = name; //이름에 관한 프로퍼티
+            this.age = age; // 나이에 관한 프로퍼티
+            }
+        
+        var myDog = new Dogs("흰색","콩이",1); // 프로토타입
+
+        // color 프로퍼티의 enumerable 속성을 false로 설정
+        Object.defineProperty(myDog,'color', {enumerable : false});
+
+        // 객체가 가진 고유 프로퍼티 중에서 열거할수 있는 프로퍼티 이름을 배열에 담아 반환. 즉, 숫자타입은 출력되지 않는다.
+        document.write(Object.keys(myDog) + " <br>");
+
+        // 객체가 가진 모든 고유 프로퍼티의 이름을 배열에 담아 반환
+        document.write(Object.getOwnPropertyNames(myDog));
+    </script>
+
+    <h1>- 객체간 비교 -</h1>
+    <p> &plus; 같은 프로퍼티값을 가져도, 프로토타입으로 생성된 변수가 가리키는 객체 레퍼런스 그 자체를 저장하는것이 아닌 객체가 위치한 주소를 저장하는것이기 때문에 같지 않다.</p>
+    <script>
+        function Dogs(color, name, age){ // 3가지의 매개변수 선언
+            this.color = color; // 색에 관한 프로퍼티
+            this.name = name; //이름에 관한 프로퍼티
+            this.age = age; // 나이에 관한 프로퍼티
+            }
+        
+        var myDog = new Dogs("흰색","콩이",1); // 프로토타입
+        var hisDog = new Dogs("흰색","콩이",1); // 프로토타입
+        // 동등 연산자
+        document.write ((myDog == hisDog) + "<br>"); 
+        // 일치 연산자
+        document.write ((myDog === hisDog) + "<br>"); 
+
+        // 새로운 변수에 이미 지정된 변수를 넣는다
+        var herDog = hisDog;
+        document.write((hisDog == herDog) + "<br>")
+        document.write((hisDog === herDog) + "<br>")
 
     </script>
 
